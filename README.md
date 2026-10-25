@@ -1,81 +1,90 @@
-# OpenThinRDP Manager
+# Know what is broken before your users call
 
-**A free health center for your infrastructure: Hyper-V and failover clusters, Proxmox VE, VMware vSphere, Remote
-Desktop Services and Citrix, domain controllers, DNS and certificates, SQL Server AlwaysOn, Veeam and VM backups, and
-the hardware (iDRAC, iLO, XClarity), in one window, with no agent and no server.** It finds what is wrong, says it in one plain sentence, and repairs it when you confirm. It also manages
-[OpenThinRDP](https://github.com/OpenThinRdp/openthinrdp) thin clients, but it does not need them.
+**OpenThinRDP Manager is a free health center for the infrastructure of small and mid-size IT teams.** Point it at
+your Hyper-V cluster, Proxmox, vSphere, Remote Desktop farm, Citrix site, domain, SQL Server and Veeam, and in about
+30 seconds you see every problem, the worst first, each one in a plain sentence with what it means and how to fix it.
+
+No agent to install. No server to build. No per-host license. **Download, extract, run.**
+
+**[⬇ Download the free manager](https://github.com/OpenThinRdp/openthinrdp-manager/releases/latest)** · Windows 10/11
+and Windows Server · English and Italian
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/OpenThinRdp/openthinrdp/main/docs/screenshots/manager-home.png" alt="OpenThinRDP Manager, Home: the health of the infrastructure, the Hyper-V cluster and its hosts, the remote desktops, the hardware, what to look at first" width="100%">
+<img src="https://raw.githubusercontent.com/OpenThinRdp/openthinrdp/main/docs/screenshots/manager-home.png" alt="OpenThinRDP Manager home: health score, Hyper-V cluster, remote desktops, hardware, the problems to look at first, today's sign-ins" width="100%">
 </p>
 
-**[Download the latest release](https://github.com/OpenThinRdp/openthinrdp-manager/releases/latest)**: a zip, nothing to
-install. Windows 10/11 or Windows Server 2016 and later, Windows PowerShell 5.1 (in every Windows). English and Italian.
+## The calls it saves you
 
-## What it checks
+- *"Nobody can sign in."* It shows **who cannot sign in right now, and why**: the broker refusing, the VM in saved
+  state, the desktop that will not start. Then the repair, one click, after you read it.
+- *"The cluster went down when we patched one host."* It tells you **before**: the witness is offline, one host
+  cannot carry the VMs of the other, a CSV is almost full.
+- *"The backup failed last week and nobody noticed."* Failed Veeam jobs, Proxmox backups that did not run, VMs whose
+  Hyper-V backups are only crash-consistent: on the first page, every morning.
+- *"The certificate expired on Saturday."* **Every certificate of every server**, what uses it, when it expires,
+  whether it renews by itself; your CA and its revocation list.
+- *"The server room is hot."* Power supplies, fans and temperatures from iDRAC, iLO and XClarity.
 
-| | |
+## Everything you run, one window
+
+| | What it checks |
 |---|---|
-| **Hyper-V hosts** | memory, CPU, disks, services, VMs that are off, saved, paused or without heartbeat, old checkpoints, planned VMs left behind, guardians of the vTPM, the room for one host to fail |
-| **Failover clusters** | nodes, quorum and witness (and why the witness is offline), Cluster Shared Volumes, Storage Spaces Direct pool and disks, repairs running, networks for live migration, anti-affinity |
-| **Remote Desktop Services** | connection brokers and their database, session hosts and virtual desktops, who cannot sign in now and why, the RDP certificates, RD Gateway and RD Web, the broker self-repair |
-| **Active Directory and DNS** | domain controllers, replication, FSMO roles, SYSVOL and NETLOGON, the clock against the PDC emulator, ADWS, DNS zones, reverse zones, stale records |
-| **SQL Server AlwaysOn** | the listener, replicas, synchronisation, suspended databases, failed jobs, backups, logins missing on a replica |
-| **Backups** | the backups of the VMs as Hyper-V sees them, and a backup of the VMs to a share, without an agent |
-| **Proxmox VE** *(new)* | quorum, nodes, memory, storage, HA resources, failed tasks and backups, failing disks |
-| **VMware vSphere** *(new)* | the health of vCenter, hosts disconnected or off, datastores almost full |
-| **Veeam Backup & Replication** *(new)* | failed jobs, jobs that stopped running, repositories almost full or offline |
-| **Citrix Virtual Apps and Desktops** *(new)* | controllers, unregistered machines, groups without free desktops, licenses in grace period |
-| **Certificates** | every certificate of every server, what uses it, when it expires, whether it renews by itself; the enterprise CA and its revocation list; which RDP servers a client could verify |
-| **Hardware** | over Redfish (Dell iDRAC, HPE iLO, Lenovo XClarity, Supermicro): power now and over 24 hours, power supplies, temperatures, fans |
-| **Your own services** | a web page, a TCP port or a SQL query, as their users reach them; your own checks and commands |
+| **Hyper-V & failover clusters** | hosts, VMs, checkpoints, quorum and witness, CSVs, Storage Spaces Direct, room for a host failure |
+| **Proxmox VE** | quorum, nodes, storage, HA, failed tasks and backups, failing disks |
+| **VMware vSphere** | vCenter health, hosts, datastores |
+| **Remote Desktop Services & Citrix** | brokers, session hosts, virtual desktops, unregistered machines, licenses, who cannot sign in |
+| **Active Directory & DNS** | domain controllers, replication, FSMO, time, zones |
+| **SQL Server AlwaysOn** | replicas, synchronisation, jobs, backups, logins |
+| **Veeam & VM backups** | failed and stale jobs, repositories, Hyper-V backup state |
+| **Certificates** | every server, the enterprise CA, RDP certificates clients can verify |
+| **Hardware** | Dell iDRAC, HPE iLO, Lenovo XClarity, Supermicro (Redfish) |
+| **Your own services** | a web page, a port, a SQL query, your scripts |
 
-Each problem comes with what it means in plain words and, when there is one, a repair you confirm before it runs.
-History and forecast (memory, disks, volumes over 30 days), maintenance per item, notices when a problem comes or
-goes, and `-HealthReport -Json` for Task Scheduler or a monitoring system.
+## Why IT teams pick it
 
-## Why it is different
+- **Free for any use, also commercial.** No trial, no account, no "per socket".
+- **Nothing to install on your servers.** It reads them over WinRM, REST and SQL with an account you choose; read
+  only, unless you confirm a repair.
+- **You can read every command it runs** on your servers: they ship as plain PowerShell next to it.
+- **Fixes, not only alarms.** Restart the stuck service, bring the role online, sync the clock, resume the database,
+  back up the VMs to a share: each one shown before it runs.
+- **It answers in sentences.** "The witness of VDICL is offline: the share \\\\nas1\\witness refuses the computer
+  account" instead of a red dot.
+- **Built by sysadmins, for a real production site** with two Hyper-V hosts, Remote Desktop and SQL AlwaysOn, and
+  tested against it every day.
 
-- **No agent, no server, no database.** It reads your servers over WinRM and SQL with the account you run it as.
-  Administration without administrator rights is possible (JEA).
-- **You can read what it runs on your servers.** Every command it sends is in `commands\` and `rds\`, plain
-  PowerShell, and it shows what it will do before you confirm.
-- **Its files are signed.** The launcher checks every file against `MANIFEST.txt`, signed with the project key, before
-  anything runs: a changed file stops it.
-- **Your secrets stay with you.** SSH keys, signing keys and iDRAC accounts are in an encrypted vault next to the
-  manager (PBKDF2 600 000 rounds, AES-256, HMAC); nothing goes to the project unless you send it.
+## Up and running in five minutes
 
-## Start
+1. [Download the zip](https://github.com/OpenThinRdp/openthinrdp-manager/releases/latest) and extract it.
+2. Start `OpenThinRDP-Manager.exe`, choose **The servers alone**.
+3. **Settings > Health Center**: your hosts, brokers, SQL listener, Proxmox or vCenter. Done: the Home fills in.
 
-1. Extract the zip into a folder, on a share if more administrators use it.
-2. Start `OpenThinRDP-Manager.exe`. The first time, choose **The servers alone** (or the management folder of your
-   OpenThinRDP devices), then **Settings > Health Center**: your hosts, brokers, SQL listener and backup share.
-3. On each PC: `OpenThinRDP-Manager.exe -Install` puts a shortcut with the icon on its desktop.
+## Questions
 
-The launcher is not signed with a certificate: Windows SmartScreen may ask the first time.
+### Is it really free?
+Yes, for any use, also in a company and for your customers. It is not open source: its license forbids selling it or
+building a competing product with it.
 
-The full guide: [the manager](https://github.com/OpenThinRdp/openthinrdp/blob/main/docs/manager.md).
+### Does it need an agent or a server?
+No. It runs on your PC and reads your servers with Windows tools (WinRM, SQL) and the REST APIs of Proxmox, vCenter and
+Veeam. Nothing is installed on them.
 
-## With OpenThinRDP thin clients
+### Can it break something?
+It only reads, until you choose a repair; every repair shows what it will do and asks first. What it runs on servers
+is plain PowerShell you can read.
 
-[OpenThinRDP](https://github.com/OpenThinRdp/openthinrdp) turns thin clients and old PCs into Remote Desktop devices
-(Debian, FreeRDP with UDP, Secure Boot, open source). With them, the same window also shows every device and its user,
-signed updates with pilot devices and going back, the remote screen, how long each sign-in takes, the peripherals,
-scheduled jobs and the inventory.
+### Proxmox, vSphere, Veeam, Citrix: is it ready?
+They are new in this release, built on their documented APIs and tested against recorded answers of those APIs, not yet on many real sites. If you run one, try it and
+[tell us what it found](https://github.com/OpenThinRdp/openthinrdp-manager/issues): we are looking for sites to try
+them.
 
-## Proxmox, vSphere, Veeam or Citrix? Try it
+### What is OpenThinRDP?
+The same team builds [OpenThinRDP](https://openthinrdp.github.io/), a free open source thin client for Remote Desktop
+(RDP over UDP, Secure Boot, signed updates). With it, the manager also runs your whole fleet of thin clients from the
+same window.
 
-Those four are new: built against their documented APIs, read only, and not yet run on many real sites. If you run
-one of them, try the manager and [tell us](https://github.com/OpenThinRdp/openthinrdp-manager/issues) what it read and
-what it missed: your report decides what comes next.
-
-## Issues and questions
-
-[Open an issue](https://github.com/OpenThinRdp/openthinrdp-manager/issues): what you saw, the Windows versions, and
-the message of the manager. A check that is wrong: *Report a false positive* in the manager prepares the issue, with
-the names of your servers replaced.
+**[⬇ Download the free manager](https://github.com/OpenThinRdp/openthinrdp-manager/releases/latest)**
 
 ## License
 
-Free for any use, also commercial, closed: see [LICENSE.md](LICENSE.md). The thin client OpenThinRDP is open source
-(GPLv3). The manager of the OpenThinRDP releases up to 0.2.22 was published under the GNU GPL and stays under it.
+Free for any use, also commercial, closed: see [LICENSE.md](LICENSE.md). The thin client OpenThinRDP is open source (GPLv3).
