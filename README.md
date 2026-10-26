@@ -11,7 +11,7 @@ No agent to install. No server to build. No per-host license. **Download, extrac
 and Windows Server · English and Italian
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/OpenThinRdp/openthinrdp/main/docs/screenshots/manager-home.png" alt="OpenThinRDP Manager home: health score, Hyper-V cluster, remote desktops, hardware, the problems to look at first, today's sign-ins" width="100%">
+<img src="https://raw.githubusercontent.com/OpenThinRdp/openthinrdp-manager/main/docs/m-home.png" alt="OpenThinRDP Manager home: health score, Hyper-V cluster, remote desktops, hardware, the problems to look at first, today's sign-ins" width="100%">
 </p>
 
 ## The calls it saves you
@@ -24,7 +24,7 @@ and Windows Server · English and Italian
   Hyper-V backups are only crash-consistent: on the first page, every morning.
 - *"The certificate expired on Saturday."* **Every certificate of every server**, what uses it, when it expires,
   whether it renews by itself; your CA and its revocation list.
-- *"The server room is hot."* Power supplies, fans and temperatures from iDRAC, iLO and XClarity.
+- *"A disk died and the RAID was degraded for a month."* **What the iDRAC says of every part**: each disk with its remaining life and a failure it predicts, RAID and its battery, memory module by module, power supplies, fans, temperatures, the hardware log and every firmware version.
 
 ## Everything you run, one window
 
@@ -41,6 +41,13 @@ and Windows Server · English and Italian
 | **Hardware** | Dell iDRAC, HPE iLO, Lenovo XClarity, Supermicro (Redfish) |
 | **Your own services** | a web page, a port, a SQL query, your scripts |
 
+## See it
+
+| | |
+|---|---|
+| <img src="https://raw.githubusercontent.com/OpenThinRdp/openthinrdp-manager/main/docs/m-health.png" alt="Health Center: each problem in a plain sentence with its fix"><br>**Health Center**: each problem in a plain sentence, with a fix you confirm | <img src="https://raw.githubusercontent.com/OpenThinRdp/openthinrdp-manager/main/docs/m-hardware.png" alt="Server hardware from the iDRAC, part by part"><br>**Server hardware**: what the iDRAC says of every part, disk by disk |
+| <img src="https://raw.githubusercontent.com/OpenThinRdp/openthinrdp-manager/main/docs/m-users.png" alt="Users: who cannot sign in right now and why"><br>**Users**: who cannot sign in right now, and why | <img src="https://raw.githubusercontent.com/OpenThinRdp/openthinrdp-manager/main/docs/m-experience.png" alt="Experience: sign-in time over 30 days"><br>**Experience**: how long each sign-in takes, for 30 days |
+| <img src="https://raw.githubusercontent.com/OpenThinRdp/openthinrdp-manager/main/docs/m-devices.png" alt="Devices: every thin client with state, session and version"><br>**Devices**: every thin client, its state, user and version | <img src="https://raw.githubusercontent.com/OpenThinRdp/openthinrdp-manager/main/docs/m-settings.png" alt="Settings: each server with its own account and a Test button"><br>**Settings**: each server with its own account and a Test |
 ## Why IT teams pick it
 
 - **Free for any use, also commercial.** No trial, no account, no "per socket".
