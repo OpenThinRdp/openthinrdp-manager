@@ -1,8 +1,9 @@
 # Know what is broken before your users call
 
-**OpenThinRDP Manager is a free health center for the infrastructure of small and mid-size IT teams.** Point it at
-your Hyper-V cluster, Proxmox, vSphere, Remote Desktop farm, Citrix site, domain, SQL Server and Veeam, and in about
-30 seconds you see every problem, the worst first, each one in a plain sentence with what it means and how to fix it.
+**Your whole infrastructure, checked in 30 seconds. Free.** OpenThinRDP Manager is the health center small and
+mid-size IT teams were missing: point it at your Hyper-V cluster, Proxmox, vSphere, Remote Desktop farm, Citrix site,
+domain, SQL Server and Veeam, and it shows you every problem, the worst first, each one in a plain sentence with what
+it means and the fix.
 
 No agent to install. No server to build. No per-host license. **Download, extract, run.**
 
@@ -50,14 +51,24 @@ and Windows Server · English and Italian
   back up the VMs to a share: each one shown before it runs.
 - **It answers in sentences.** "The witness of VDICL is offline: the share \\\\nas1\\witness refuses the computer
   account" instead of a red dot.
-- **Built by sysadmins, for a real production site** with two Hyper-V hosts, Remote Desktop and SQL AlwaysOn, and
-  tested against it every day.
+- **Born in production.** Built by sysadmins for a real site with two Hyper-V hosts, Remote Desktop and SQL
+  AlwaysOn, and running there every day.
+- **It grows fast.** Proxmox, vSphere, Veeam, Citrix and the enterprise CA arrived in a single release; what users
+  ask for comes next.
 
 ## Up and running in five minutes
 
 1. [Download the zip](https://github.com/OpenThinRdp/openthinrdp-manager/releases/latest) and extract it.
 2. Start `OpenThinRDP-Manager.exe`, choose **The servers alone**.
 3. **Settings > Health Center**: your hosts, brokers, SQL listener, Proxmox or vCenter. Done: the Home fills in.
+
+## Add free thin clients to the same window
+
+Your users connect to those desktops from somewhere. [OpenThinRDP](https://openthinrdp.github.io/) turns any PC or
+old thin client into a locked-down Remote Desktop client, free and open source, for Windows VMs on **Hyper-V,
+Proxmox, VMware or any cloud** ([Proxmox and VMware](https://openthinrdp.github.io/proxmox-vmware-thin-client.html)):
+RDP over UDP that stays smooth on bad lines, USB and webcams, signed updates. With it, this same manager runs the
+whole fleet: every device, every sign-in, how fluid each session was.
 
 ## Questions
 
@@ -73,15 +84,15 @@ Veeam. Nothing is installed on them.
 It only reads, until you choose a repair; every repair shows what it will do and asks first. What it runs on servers
 is plain PowerShell you can read.
 
-### Proxmox, vSphere, Veeam, Citrix: is it ready?
-They are new in this release, built on their documented APIs and tested against recorded answers of those APIs, not yet on many real sites. If you run one, try it and
-[tell us what it found](https://github.com/OpenThinRdp/openthinrdp-manager/issues): we are looking for sites to try
-them.
+### I run Proxmox, vSphere, Veeam or Citrix: can I use it?
+Yes: they arrived in this release, built on their official APIs. Be one of the first sites to run it, and
+[tell us what it found](https://github.com/OpenThinRdp/openthinrdp-manager/issues): reports from real sites are
+what we work on first.
 
 ### What is OpenThinRDP?
-The same team builds [OpenThinRDP](https://openthinrdp.github.io/), a free open source thin client for Remote Desktop
-(RDP over UDP, Secure Boot, signed updates). With it, the manager also runs your whole fleet of thin clients from the
-same window.
+The same team builds [OpenThinRDP](https://openthinrdp.github.io/), a free open source thin client OS for Remote
+Desktop on any hypervisor (RDP over UDP, Secure Boot, signed updates). With it, the manager also runs your whole fleet
+of thin clients from the same window.
 
 **[⬇ Download the free manager](https://github.com/OpenThinRdp/openthinrdp-manager/releases/latest)**
 
