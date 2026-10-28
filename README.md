@@ -8,7 +8,7 @@ it means and the fix.
 No agent to install. No server to build. No per-host license. **Download, extract, run.**
 
 **[⬇ Download the free manager](https://github.com/OpenThinRdp/openthinrdp-manager/releases/latest)** · Windows 10/11
-and Windows Server · English and Italian
+and Windows Server · English and Italian · **1.0.0**, it updates itself · [its page](https://openthinrdp.github.io/manager.html)
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/OpenThinRdp/openthinrdp-manager/main/docs/m-home.png" alt="OpenThinRDP Manager home: health score, Hyper-V cluster, remote desktops, hardware, the problems to look at first, today's sign-ins" width="100%">
@@ -78,6 +78,11 @@ RDP over UDP that stays smooth on bad lines, USB and webcams, signed updates. Wi
 whole fleet: every device, every sign-in, how fluid each session was.
 
 ## Questions
+
+### Is it a PowerShell script that edits configuration files?
+No. That was the first manager of OpenThinRDP, in its first weeks (up to 0.2.22). Today it is a Windows application with
+releases of its own (1.0.0 from 28 October 2026), signed with the project key, that updates itself; the health center
+works also without any thin client. The commands it runs on your servers stay plain PowerShell you can read.
 
 ### Is it really free?
 Yes, for any use, also in a company and for your customers. It is not open source: its license forbids selling it or
