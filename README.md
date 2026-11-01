@@ -8,7 +8,7 @@ it means and the fix.
 No agent to install. No server to build. No per-host license. **Download, extract, run.**
 
 **[⬇ Download the free manager](https://github.com/OpenThinRdp/openthinrdp-manager/releases/latest)** · Windows 10/11
-and Windows Server · English and Italian · **1.0.0**, it updates itself · [its page](https://openthinrdp.github.io/manager.html)
+and Windows Server · English and Italian · it updates itself · [its page](https://openthinrdp.github.io/manager.html)
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/OpenThinRdp/openthinrdp-manager/main/docs/m-home.png" alt="OpenThinRDP Manager home: health score, Hyper-V cluster, remote desktops, hardware, the problems to look at first, today's sign-ins" width="100%">
