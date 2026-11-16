@@ -71,10 +71,11 @@ and Windows Server · English and Italian · it updates itself · [its page](htt
 
 ## Add free thin clients to the same window
 
-Your users connect to those desktops from somewhere. [OpenThinRDP](https://openthinrdp.github.io/) turns any PC or
-old thin client into a locked-down Remote Desktop client, free and open source, for Windows VMs on **Hyper-V,
-Proxmox, VMware or any cloud** ([Proxmox and VMware](https://openthinrdp.github.io/proxmox-vmware-thin-client.html)):
-RDP over UDP that stays smooth on bad lines, USB and webcams, signed updates. With it, this same manager runs the
+Your users connect to those desktops from somewhere. [OpenThinRDP](https://openthinrdp.github.io/) is **the first open
+source thin client with RDP over UDP**: a light, locked-down Remote Desktop client for any thin client or PC, for
+Windows VMs on **Hyper-V, Proxmox, VMware or any cloud** ([Proxmox and VMware](https://openthinrdp.github.io/proxmox-vmware-thin-client.html)).
+Sessions that keep moving on bad lines, webcams up to 1080p at 30 fps in Teams and Zoom, USB devices passed whole,
+signed updates. With it, this same manager runs the
 whole fleet: every device, every sign-in, how fluid each session was.
 
 ## Questions
@@ -97,13 +98,13 @@ It only reads, until you choose a repair; every repair shows what it will do and
 is plain PowerShell you can read.
 
 ### I run Proxmox, vSphere, Veeam or Citrix: can I use it?
-Yes: they arrived in this release, built on their official APIs. Be one of the first sites to run it, and
+Yes, built on their official APIs. Be one of the first sites to run it, and
 [tell us what it found](https://github.com/OpenThinRdp/openthinrdp-manager/issues): reports from real sites are
 what we work on first.
 
 ### What is OpenThinRDP?
-The same team builds [OpenThinRDP](https://openthinrdp.github.io/), a free open source thin client OS for Remote
-Desktop on any hypervisor (RDP over UDP, Secure Boot, signed updates). With it, the manager also runs your whole fleet
+The same team builds [OpenThinRDP](https://openthinrdp.github.io/), the first open source thin client with RDP over
+UDP, for Remote Desktop on any hypervisor (webcams up to 1080p, Secure Boot, signed updates). With it, the manager also runs your whole fleet
 of thin clients from the same window.
 
 **[⬇ Download the free manager](https://github.com/OpenThinRdp/openthinrdp-manager/releases/latest)**
